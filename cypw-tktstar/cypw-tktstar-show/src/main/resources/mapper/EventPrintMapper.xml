@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.EventPrintMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.EventPrint">
+    <id column="print_id" jdbcType="INTEGER" property="printId" />
+    <result column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="canvas_width" jdbcType="INTEGER" property="canvasWidth" />
+    <result column="canvas_height" jdbcType="INTEGER" property="canvasHeight" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="update_user" jdbcType="INTEGER" property="updateUser" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="svg_data" jdbcType="LONGVARCHAR" property="svgData" />
+  </resultMap>
+
+</mapper>

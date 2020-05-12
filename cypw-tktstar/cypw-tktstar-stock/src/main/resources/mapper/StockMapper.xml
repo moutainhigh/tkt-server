@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.stock.mapper.StockMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.stock.model.Stock">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sku_type" jdbcType="INTEGER" property="skuType" />
+    <result column="sku_id" jdbcType="INTEGER" property="skuId" />
+    <result column="price_id" jdbcType="INTEGER" property="priceId" />
+    <result column="total_stock" jdbcType="INTEGER" property="totalStock" />
+    <result column="selling_stock" jdbcType="INTEGER" property="sellingStock" />
+    <result column="reserve_total_stock" jdbcType="INTEGER" property="reserveTotalStock" />
+    <result column="reserve_selling_stock" jdbcType="INTEGER" property="reserveSellingStock" />
+    <result column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, sku_type, sku_id, price_id, total_stock, selling_stock, reserve_total_stock, 
+    reserve_selling_stock, event_id, version, enterprise_id
+  </sql>
+
+
+    <update id="consumeStock" parameterType="map">
+        UPDATE cy_stock
+        SET
+        selling_stock = selling_stock + #{count},
+        version = version + 1
+        WHERE
+        sku_type = #{skuType} AND sku_id = #{skuId} AND total_stock >=(selling_stock + reserve_total_stock + #{count})
+    </update>
+
+    <update id="rollbackStock" parameterType="map">
+        UPDATE cy_stock
+        SET
+        selling_stock = selling_stock - #{count},
+        version = version + 1
+        WHERE
+        sku_type = #{skuType} AND sku_id = #{skuId} AND total_stock >=(selling_stock + reserve_total_stock - #{count}) AND (selling_stock - #{count}) >=0
+    </update>
+</mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.ticket.mapper.CheckRecordMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.ticket.model.CheckRecord">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ticket_id" jdbcType="INTEGER" property="ticketId" />
+    <result column="program_id" jdbcType="INTEGER" property="programId" />
+    <result column="program_name" jdbcType="VARCHAR" property="programName" />
+    <result column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="event_name" jdbcType="VARCHAR" property="eventName" />
+    <result column="channel" jdbcType="TINYINT" property="channel" />
+    <result column="device_type" jdbcType="TINYINT" property="deviceType" />
+    <result column="device_version" jdbcType="VARCHAR" property="deviceVersion" />
+    <result column="device_unique_code" jdbcType="VARCHAR" property="deviceUniqueCode" />
+    <result column="ticket_method" jdbcType="TINYINT" property="checkMethod" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="id_card_name" jdbcType="VARCHAR" property="idCardName" />
+    <result column="binding_id_card" jdbcType="VARCHAR" property="bindingIdCard" />
+    <result column="binding_id_card_name" jdbcType="VARCHAR" property="bindingIdCardName" />
+    <result column="check_time" jdbcType="TIMESTAMP" property="checkTime" />
+    <result column="check_code" jdbcType="VARCHAR" property="checkCode" />
+    <result column="check_user_id" jdbcType="INTEGER" property="checkUserId" />
+    <result column="check_user_name" jdbcType="VARCHAR" property="checkUserName" />
+    <result column="check_entry_id" jdbcType="INTEGER" property="checkEntryId" />
+    <result column="check_entry" jdbcType="VARCHAR" property="checkEntry" />
+    <result column="ticket_price" jdbcType="INTEGER" property="ticketPrice" />
+    <result column="ticket_price_desc" jdbcType="VARCHAR" property="ticketPriceDesc" />
+    <result column="venue_name" jdbcType="VARCHAR" property="venueName" />
+    <result column="zone_name" jdbcType="VARCHAR" property="zoneName" />
+    <result column="seat_name" jdbcType="VARCHAR" property="seatName" />
+    <result column="mobile_no" jdbcType="VARCHAR" property="mobileNo" />
+    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, ticket_id, program_id, program_name, event_id, event_name, channel, device_type, 
+    device_version, device_unique_code, check_method, id_card, id_card_name, binding_id_card,
+    binding_id_card_name, check_time, check_code, check_user_id, check_user_name, check_entry_id, check_entry,
+    ticket_price, ticket_price_desc, venue_name, zone_name, seat_name, mobile_no, customer_name, enterprise_id
+  </sql>
+</mapper>

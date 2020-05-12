@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.admin.mapper.UserRoleMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.admin.pojo.UserRole">
+        <id column="role_id" jdbcType="INTEGER" property="roleId"/>
+        <result column="group_id" jdbcType="INTEGER" property="groupId"/>
+        <result column="role_name" jdbcType="VARCHAR" property="roleName"/>
+        <result column="role_desc" jdbcType="VARCHAR" property="roleDesc"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="update_name" jdbcType="VARCHAR" property="updateName"/>
+        <result column="is_delete" jdbcType="INTEGER" property="isDelete"/>
+        <result column="is_enable" jdbcType="INTEGER" property="isEnable"/>
+        <result column="company_id" jdbcType="INTEGER" property="companyId"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+    </resultMap>
+
+</mapper>

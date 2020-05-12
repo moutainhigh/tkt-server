@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.coupon.mapper.PromotionMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.coupon.pojo.Promotion">
+        <id column="promotion_id" jdbcType="INTEGER" property="promotionId"/>
+        <result column="business_type_id" jdbcType="INTEGER" property="businessTypeId"/>
+        <result column="promotion_type_id" jdbcType="INTEGER" property="promotionTypeId"/>
+        <result column="promotion_name" jdbcType="VARCHAR" property="promotionName"/>
+        <result column="program_point_id" jdbcType="INTEGER" property="programPointId"/>
+        <result column="program_type_ids" jdbcType="VARCHAR" property="programTypeIds"/>
+        <result column="order_amount_restriction" jdbcType="DECIMAL" property="orderAmountRestriction"/>
+        <result column="min_qty_restriction" jdbcType="INTEGER" property="minQtyRestriction"/>
+        <result column="max_qty_restriction" jdbcType="INTEGER" property="maxQtyRestriction"/>
+        <result column="max_qty_restriction_per_event" jdbcType="INTEGER" property="maxQtyRestrictionPerEvent"/>
+        <result column="member_restriction" jdbcType="VARCHAR" property="memberRestriction"/>
+        <result column="payment_restriction" jdbcType="VARCHAR" property="paymentRestriction"/>
+        <result column="app_show" jdbcType="INTEGER" property="appShow"/>
+        <result column="wechat_show" jdbcType="INTEGER" property="wechatShow"/>
+        <result column="pc_show" jdbcType="INTEGER" property="pcShow"/>
+        <result column="promotion_begin_date" jdbcType="TIMESTAMP" property="promotionBeginDate"/>
+        <result column="promotion_end_date" jdbcType="TIMESTAMP" property="promotionEndDate"/>
+        <result column="is_display" jdbcType="INTEGER" property="isDisplay"/>
+        <result column="is_enable" jdbcType="INTEGER" property="isEnable"/>
+        <result column="is_delete" jdbcType="INTEGER" property="isDelete"/>
+        <result column="list_image" jdbcType="VARCHAR" property="listImage"/>
+        <result column="detail_image" jdbcType="VARCHAR" property="detailImage"/>
+        <result column="promotion_brief" jdbcType="VARCHAR" property="promotionBrief"/>
+        <result column="promotion_content" jdbcType="VARCHAR" property="promotionContent"/>
+        <result column="promotion_remark" jdbcType="VARCHAR" property="promotionRemark"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="qr_code" jdbcType="VARCHAR" property="qrCode"/>
+        <result column="key_type" jdbcType="VARCHAR" property="keyType"/>
+        <result column="promotion_discount" jdbcType="DECIMAL" property="promotionDiscount"/>
+        <result column="promotion_amount" jdbcType="DECIMAL" property="promotionAmount"/>
+        <result column="promotion_qty_rate" jdbcType="VARCHAR" property="promotionQtyRate"/>
+        <result column="promotion_gift_price_id" jdbcType="INTEGER" property="promotionGiftPriceId"/>
+        <result column="show_time_image" jdbcType="INTEGER" property="showTimeImage"/>
+        <result column="show_other_images" jdbcType="VARCHAR" property="showOtherImages"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="limit_date_string" jdbcType="VARCHAR" property="limitDateString"/>
+        <result column="promotion_code" jdbcType="VARCHAR" property="promotionCode"/>
+        <result column="allow_exchange_qty" jdbcType="INTEGER" property="allowExchangeQty"/>
+        <result column="have_exchange_qty" jdbcType="INTEGER" property="haveExchangeQty"/>
+        <result column="distribution_type" jdbcType="TINYINT" property="distributionType"/>
+        <result column="available_day" jdbcType="INTEGER" property="availableDay"/>
+        <result column="available_begin_date" jdbcType="TIMESTAMP" property="availableBeginDate"/>
+        <result column="available_end_date" jdbcType="TIMESTAMP" property="availableEndDate"/>
+    </resultMap>
+
+    <select id="searchPromotion" resultMap="BaseResultMap">
+        SELECT * FROM tblpromotion
+        <where>
+            is_delete = 0 and is_display = 1 and is_enable = 1
+            <choose>
+                <when test="isReceiveTime == 0">
+                    and (NOW() <![CDATA[  >  ]]> promotion_end_date or NOW() <![CDATA[  <  ]]> promotion_begin_date)
+                </when>
+                <when test="isReceiveTime == 1">
+                    and NOW() BETWEEN promotion_begin_date and promotion_end_date
+                </when>
+                <otherwise></otherwise>
+            </choose>
+            <choose>
+                <when test="isAvailableTime == 0">
+                    and (NOW() <![CDATA[  >  ]]> available_end_date or NOW() <![CDATA[  <  ]]> available_begin_date)
+                </when>
+                <when test="isAvailableTime == 1">
+                    and NOW() BETWEEN available_begin_date and available_end_date
+                </when>
+                <otherwise></otherwise>
+            </choose>
+            <if test="enterpriseId !=null">
+                and enterprise_id = #{enterpriseId}
+            </if>
+            <if test="promotionTypeList !=null and promotionTypeList.size >0 ">
+                and promotion_type_id in
+                <foreach collection="promotionTypeList" open="(" close=")" separator="," item="item">#{item}</foreach>
+            </if>
+            <if test="promotionIds !=null and promotionIds.size >0">
+                and promotion_id in
+                <foreach collection="promotionIds" open="(" close=")" separator="," item="item">#{item}</foreach>
+            </if>
+            <if test="notPromotionIds !=null and notPromotionIds.size >0">
+                and promotion_id not in
+                <foreach collection="notPromotionIds" open="(" close=")" separator="," item="item">#{item}</foreach>
+            </if>
+            <if test="notPromotionPointTypes !=null and notPromotionPointTypes.size > 0 ">
+                and program_point_id not in
+                <foreach collection="notPromotionPointTypes" open="(" close=")" separator="," item="item">#{item}</foreach>
+            </if>
+            <choose>
+                <when test="(programTypeIds !=null and programTypeIds.size > 0) and (programPromotionIds !=null and programPromotionIds.size > 0 )">
+                    and (
+                    <foreach collection="programTypeIds" separator="or" item="item">
+                        find_in_set(#{item},program_type_ids) >0
+                    </foreach>
+                    or promotion_id in
+                    <foreach collection="programPromotionIds" open="(" close=")" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    or program_point_id = 0
+                    )
+                </when>
+                <when test="(programTypeIds ==null or programTypeIds.size == 0) and (programPromotionIds !=null and programPromotionIds.size > 0)">
+                    and (
+                            (
+                            promotion_id in
+                            <foreach collection="programPromotionIds" open="(" close=")" separator="," item="item">
+                                #{item}
+                            </foreach>
+                            and program_point_id = 2
+                            )
+                      or program_point_id = 0
+                    )
+                </when>
+                <when test="(programTypeIds !=null and programTypeIds.size > 0) and (programPromotionIds ==null or programPromotionIds.size == 0)">
+                    and (
+                            (
+                            <foreach collection="programTypeIds" open="(" close=")" separator="or" item="item">
+                                find_in_set(#{item},program_type_ids) >0
+                            </foreach>
+                            and program_point_id = 1
+                            )
+                        or program_point_id = 0
+                    )
+                </when>
+                <otherwise></otherwise>
+            </choose>
+            <if test="orderAmountRestriction !=null">
+                and order_amount_restriction <![CDATA[  <=  ]]> #{orderAmountRestriction}
+                and (CASE WHEN promotion_type_id = 3 THEN promotion_amount <![CDATA[ >=  ]]>  #{orderAmountRestriction} ELSE promotion_type_id != 3 END)
+            </if>
+            <if test="distributionType !=null">
+                and distribution_type = #{distributionType}
+            </if>
+            <if test="businessTypeId !=null">
+                and business_type_id = #{businessTypeId}
+            </if>
+            order by promotion_type_id DESC,promotion_amount DESC,promotion_discount ASC
+        </where>
+    </select>
+
+</mapper>

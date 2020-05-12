@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.member.mapper.MemberDepositMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.member.pojo.MemberDeposit">
+    <id column="deposit_id" jdbcType="INTEGER" property="depositId" />
+    <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="deposit_value" jdbcType="INTEGER" property="depositValue" />
+    <result column="deposit_desc" jdbcType="VARCHAR" property="depositDesc" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="ip_address" jdbcType="VARCHAR" property="ipAddress" />
+    <result column="old_value" jdbcType="INTEGER" property="oldValue" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+
+</mapper>

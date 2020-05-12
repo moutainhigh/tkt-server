@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.stock.mapper.StockSeatRecordMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.stock.model.StockSeatRecord">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="seat_info" jdbcType="VARCHAR" property="seatInfo" />
+    <result column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, seat_info, event_id, member_id, status, enterprise_id
+  </sql>
+</mapper>

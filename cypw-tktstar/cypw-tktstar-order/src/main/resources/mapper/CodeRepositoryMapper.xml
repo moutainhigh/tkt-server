@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.order.mapper.CodeRepositoryMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.order.model.CodeRepository">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="bit_length" jdbcType="TINYINT" property="bitLength" />
+    <result column="serial_no" jdbcType="VARCHAR" property="serialNo" />
+    <result column="code_source" jdbcType="TINYINT" property="codeSource" />
+    <result column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="price_id" jdbcType="INTEGER" property="priceId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, code, status, bit_length, serial_nom, code_source, event_id, price_id
+  </sql>
+</mapper>

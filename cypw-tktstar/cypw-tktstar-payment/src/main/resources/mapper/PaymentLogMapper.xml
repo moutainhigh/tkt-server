@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.payment.mapper.PaymentLogMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.payment.pojo.PaymentLog">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="order_id" jdbcType="INTEGER" property="orderId"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="payment_type" jdbcType="VARCHAR" property="paymentType"/>
+        <result column="transaction_flow_no" jdbcType="VARCHAR" property="transactionFlowNo"/>
+        <result column="amount" jdbcType="VARCHAR" property="amount"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+        <result column="transaction_info" jdbcType="VARCHAR" property="transactionInfo"/>
+        <result column="deleted" jdbcType="INTEGER" property="deleted"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <update id="updateStatus">
+        UPDATE cy_payment_log SET `status` = 'SUCCESS' WHERE order_id = #{orderId}
+    </update>
+
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.EventMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.Event">
+    <id column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="program_id" jdbcType="INTEGER" property="programId" />
+    <result column="event_title" jdbcType="VARCHAR" property="eventTitle" />
+    <result column="event_date" jdbcType="TIMESTAMP" property="eventDate" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="is_seat" jdbcType="INTEGER" property="isSeat" />
+    <result column="is_enable" jdbcType="INTEGER" property="isEnable" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="update_user" jdbcType="INTEGER" property="updateUser" />
+    <result column="sale_date_begin" jdbcType="TIMESTAMP" property="saleDateBegin" />
+    <result column="sale_date_end" jdbcType="TIMESTAMP" property="saleDateEnd" />
+    <result column="template_id" jdbcType="INTEGER" property="templateId" />
+    <result column="code_source" jdbcType="INTEGER" property="codeSource" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+    <result column="is_tongpiao" jdbcType="INTEGER" property="isPass" />
+    <result column="tongpiao_begin_date" jdbcType="TIMESTAMP" property="passBeginDate" />
+    <result column="tongpiao_end_date" jdbcType="TIMESTAMP" property="passEndDate" />
+    <result column="include_weekdays" jdbcType="VARCHAR" property="includeWeekdays" />
+  </resultMap>
+
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>cypw-tktstar</artifactId>
+        <groupId>com.mtl.cypw</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>cypw-tktstar-mq</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.mtl.common</groupId>
+            <artifactId>common-mq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mtl.cypw</groupId>
+            <artifactId>cypw-tktstar-common</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.order.mapper.OrderRefundMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.order.model.OrderRefund">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="apply_type" jdbcType="TINYINT" property="applyType" />
+    <result column="reason_type" jdbcType="TINYINT" property="reasonType" />
+    <result column="duty_type" jdbcType="TINYINT" property="dutyType" />
+    <result column="refund_status" jdbcType="TINYINT" property="refundStatus" />
+    <result column="finish_time" jdbcType="TIMESTAMP" property="finishTime" />
+    <result column="rollback_stock" jdbcType="TINYINT" property="rollbackStock" />
+    <result column="operator_id" jdbcType="VARCHAR" property="operatorId" />
+    <result column="operator_name" jdbcType="VARCHAR" property="operatorName" />
+    <result column="refund_type" jdbcType="TINYINT" property="refundType" />
+    <result column="refund_amount" jdbcType="INTEGER" property="refundAmount" />
+    <result column="reason_note" jdbcType="VARCHAR" property="reasonNote" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, apply_type, reason_type, duty_type, refund_status, finish_time, rollback_stock, 
+    operator_id, operator_name, refund_type, refund_amount, reason_note, enterprise_id
+  </sql>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.ProvinceMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.Province">
+    <id column="province_code" jdbcType="VARCHAR" property="provinceCode" />
+    <result column="province_name" jdbcType="VARCHAR" property="provinceName" />
+    <result column="province_ename" jdbcType="VARCHAR" property="provinceEname" />
+    <result column="nationcode" jdbcType="VARCHAR" property="nationcode" />
+    <result column="nationname" jdbcType="VARCHAR" property="nationname" />
+    <result column="nationename" jdbcType="VARCHAR" property="nationename" />
+    <result column="continentcode" jdbcType="VARCHAR" property="continentcode" />
+    <result column="continentname" jdbcType="VARCHAR" property="continentname" />
+    <result column="continentename" jdbcType="VARCHAR" property="continentename" />
+    <result column="regionlevel" jdbcType="VARCHAR" property="regionlevel" />
+  </resultMap>
+
+</mapper>

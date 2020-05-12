@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.order.mapper.OrderItemMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.order.model.OrderItem">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="product_title" jdbcType="VARCHAR" property="productTitle" />
+    <result column="item_id" jdbcType="INTEGER" property="itemId" />
+    <result column="price_id" jdbcType="INTEGER" property="priceId" />
+    <result column="price_desc" jdbcType="VARCHAR" property="priceDesc" />
+    <result column="image_src" jdbcType="VARCHAR" property="imageSrc" />
+    <result column="is_package" jdbcType="TINYINT" property="isPackage" />
+    <result column="package_number" jdbcType="TINYINT" property="packageNumber" />
+    <result column="origin_price" jdbcType="INTEGER" property="originPrice" />
+    <result column="unit_price" jdbcType="INTEGER" property="unitPrice" />
+    <result column="quantity" jdbcType="TINYINT" property="quantity" />
+    <result column="discount_fee" jdbcType="INTEGER" property="discountFee" />
+    <result column="cost_fee" jdbcType="INTEGER" property="costFee" />
+    <result column="sku_type" jdbcType="TINYINT" property="skuType" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, product_title, item_id, price_id, price_desc, image_src, is_package, package_number, origin_price, unit_price,
+    quantity, discount_fee, cost_fee, sku_type, enterprise_id
+  </sql>
+</mapper>

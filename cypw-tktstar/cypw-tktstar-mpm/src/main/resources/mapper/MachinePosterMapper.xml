@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.MachinePosterMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.MachinePoster">
+        <id column="poster_id" jdbcType="INTEGER" property="posterId"/>
+        <result column="poster_name" jdbcType="VARCHAR" property="posterName"/>
+        <result column="poster_image" jdbcType="VARCHAR" property="posterImage"/>
+        <result column="sort_order" jdbcType="INTEGER" property="sortOrder"/>
+        <result column="is_enable" jdbcType="INTEGER" property="isEnable"/>
+        <result column="is_delete" jdbcType="INTEGER" property="isDelete"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="create_user" jdbcType="INTEGER" property="createUser"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        poster_id, poster_name, poster_image, sort_order, is_enable, is_delete, enterprise_id,
+        create_date, create_user, update_date, update_user
+    </sql>
+</mapper>

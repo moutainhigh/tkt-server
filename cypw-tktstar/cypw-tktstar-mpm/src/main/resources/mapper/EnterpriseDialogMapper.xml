@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.EnterpriseDialogMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.EnterpriseDialog">
+        <id column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="is_show" jdbcType="TINYINT" property="isShow"/>
+        <result column="message1" jdbcType="VARCHAR" property="message1"/>
+        <result column="message2" jdbcType="VARCHAR" property="message2"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+    </resultMap>
+
+</mapper>

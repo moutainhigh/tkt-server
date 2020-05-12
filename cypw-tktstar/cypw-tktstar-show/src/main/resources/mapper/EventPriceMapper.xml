@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.EventPriceMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.EventPrice">
+        <id column="price_id" jdbcType="INTEGER" property="priceId"/>
+        <result column="event_id" jdbcType="INTEGER" property="eventId"/>
+        <result column="price_origin" jdbcType="VARCHAR" property="priceOrigin"/>
+        <result column="price_value" jdbcType="DECIMAL" property="priceValue"/>
+        <result column="price_class" jdbcType="VARCHAR" property="priceClass"/>
+        <result column="total_qty" jdbcType="INTEGER" property="totalQty"/>
+        <result column="price_title" jdbcType="VARCHAR" property="priceTitle"/>
+        <result column="stock_qty" jdbcType="INTEGER" property="stockQty"/>
+        <result column="sold_qty" jdbcType="INTEGER" property="soldQty"/>
+        <result column="is_enable" jdbcType="INTEGER" property="isEnable"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="price_color" jdbcType="VARCHAR" property="priceColor"/>
+        <result column="min_qty" jdbcType="INTEGER" property="minQty"/>
+        <result column="product_type" jdbcType="INTEGER" property="productType"/>
+    </resultMap>
+
+    <select id="searchMinPriceByProgramIds" resultType="com.mtl.cypw.domain.show.dto.EventPriceDTO">
+        SELECT e.program_id  `programId`,MIN(ep.price_value) `priceValue` FROM tblevent e
+        JOIN tbleventprice ep on ep.event_id = e.event_id
+        <where>
+            ep.is_enable = 1
+            <if test="programIds !=null and programIds.size >0">
+                and e.program_id in
+                <foreach collection="programIds" open="(" close=")" item="item" separator=",">#{item}</foreach>
+            </if>
+        </where>
+        GROUP BY e.program_id
+    </select>
+
+</mapper>

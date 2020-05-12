@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.order.mapper.OrderSystemRecordMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.order.model.OrderSystemRecord">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="action_type" jdbcType="TINYINT" property="actionType" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="operator_id" jdbcType="INTEGER" property="operatorId" />
+    <result column="operator_name" jdbcType="VARCHAR" property="operatorName" />
+    <result column="total_amount" jdbcType="INTEGER" property="totalAmount" />
+    <result column="pay_amount" jdbcType="INTEGER" property="payAmount" />
+    <result column="item_count" jdbcType="INTEGER" property="itemCount" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, action_type, product_name, item_name, operator_id, operator_name, total_amount, 
+    pay_amount, item_count, enterprise_id
+  </sql>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.member.mapper.MachineMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.member.pojo.Machine">
+        <id column="machine_id" jdbcType="INTEGER" property="machineId"/>
+        <result column="machine_key" jdbcType="VARCHAR" property="machineKey"/>
+        <result column="mac_address" jdbcType="VARCHAR" property="macAddress"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="is_enable" jdbcType="TINYINT" property="isEnable"/>
+        <result column="is_delete" jdbcType="TINYINT" property="isDelete"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="create_user" jdbcType="INTEGER" property="createUser"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        machine_id, machine_key, mac_address, remark, is_enable, is_delete, enterprise_id,
+        create_date, update_date, create_user, update_user
+    </sql>
+</mapper>

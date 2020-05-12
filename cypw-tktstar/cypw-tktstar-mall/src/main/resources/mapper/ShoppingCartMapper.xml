@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mall.mapper.ShoppingCartMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.mall.model.ShoppingCart">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="product_id" jdbcType="INTEGER" property="productId" />
+    <result column="sku_type" jdbcType="INTEGER" property="skuType" />
+    <result column="sku_id" jdbcType="INTEGER" property="skuId" />
+    <result column="quantity" jdbcType="TINYINT" property="quantity" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, member_id, product_id, sku_type, sku_id, quantity, status, enterprise_id
+  </sql>
+</mapper>

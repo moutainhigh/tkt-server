@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.EventSeatMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.EventSeat">
+        <id column="seat_id" jdbcType="INTEGER" property="seatId"/>
+        <result column="event_id" jdbcType="INTEGER" property="eventId"/>
+        <result column="zone_id" jdbcType="INTEGER" property="zoneId"/>
+        <result column="bg_color" jdbcType="VARCHAR" property="bgColor"/>
+        <result column="row_int" jdbcType="INTEGER" property="rowInt"/>
+        <result column="col_int" jdbcType="INTEGER" property="colInt"/>
+        <result column="row_name" jdbcType="VARCHAR" property="rowName"/>
+        <result column="col_name" jdbcType="VARCHAR" property="colName"/>
+        <result column="only_prefix" jdbcType="INTEGER" property="onlyPrefix"/>
+        <result column="seat_type" jdbcType="INTEGER" property="seatType"/>
+        <result column="price_id" jdbcType="INTEGER" property="priceId"/>
+        <result column="seat_status" jdbcType="INTEGER" property="seatStatus"/>
+        <result column="lock_id" jdbcType="INTEGER" property="lockId"/>
+        <result column="lock_date" jdbcType="TIMESTAMP" property="lockDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="pool_id" jdbcType="INTEGER" property="poolId"/>
+        <result column="ticket_sn" jdbcType="VARCHAR" property="ticketSn"/>
+        <result column="reserve_id" jdbcType="INTEGER" property="reserveId"/>
+        <result column="reserve_date" jdbcType="TIMESTAMP" property="reserveDate"/>
+    </resultMap>
+
+    <select id="searchSeatCount" resultType="com.mtl.cypw.domain.show.dto.CountDTO">
+        SELECT price_id `id`,count(1) `count` FROM tbleventseat
+        <where>
+            <if test="priceId != null">and price_id = #{priceId}</if>
+            <if test="priceIds != null and priceIds.size > 0 ">
+                and price_id in
+                <foreach collection="priceIds" separator="," item="item" open="(" close=")">
+                    #{item}
+                </foreach>
+            </if>
+            <if test="seatStatus != null">and seat_status = #{seatStatus}</if>
+            <if test="seatStatusList != null and seatStatusList.size > 0 ">
+                and seat_status in
+                <foreach collection="seatStatusList" separator="," item="item" open="(" close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+        GROUP BY price_id
+    </select>
+
+</mapper>

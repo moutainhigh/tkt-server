@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.stock.mapper.ReserveFormMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.stock.model.ReserveForm">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="program_id" jdbcType="INTEGER" property="programId" />
+    <result column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="reserved_no" jdbcType="VARCHAR" property="reservedNo" />
+    <result column="reserved_name" jdbcType="VARCHAR" property="reservedName" />
+    <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="target_mobile" jdbcType="VARCHAR" property="targetMobile" />
+    <result column="target_name" jdbcType="VARCHAR" property="targetName" />
+    <result column="total_amount" jdbcType="INTEGER" property="totalAmount" />
+    <result column="seat_count" jdbcType="INTEGER" property="seatCount" />
+    <result column="reserved_time" jdbcType="TIMESTAMP" property="reservedTime" />
+    <result column="reserved_status" jdbcType="TINYINT" property="reservedStatus" />
+    <result column="auto_release" jdbcType="TINYINT" property="autoRelease" />
+    <result column="release_time" jdbcType="TIMESTAMP" property="releaseTime" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, program_id, event_id, reserved_no, reserved_name, member_id, target_mobile, target_name, 
+    total_amount, seat_count, reserved_time, reserved_status, auto_release, release_time, 
+    remark, enterprise_id
+  </sql>
+</mapper>

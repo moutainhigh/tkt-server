@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.BuryingPointInfoMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.BuryingPointInfo">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="member_id" jdbcType="INTEGER" property="memberId"/>
+        <result column="burying_point_type" jdbcType="INTEGER" property="buryingPointType"/>
+        <result column="burying_point_content" jdbcType="VARCHAR" property="buryingPointContent"/>
+        <result column="source_platform" jdbcType="VARCHAR" property="sourcePlatform"/>
+        <result column="source_page" jdbcType="VARCHAR" property="sourcePage"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="deleted" jdbcType="INTEGER" property="deleted"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <select id="searchBuryingPoint" resultMap="BaseResultMap">
+        SELECT
+            member_id,burying_point_content,burying_point_type,COUNT(1) `count`,
+            DATE_FORMAT(create_time,'%y%y-%m-%d') `dateTime`
+        FROM cy_burying_point_info
+        WHERE deleted = 0
+        <if test="memberId !=null">and member_id = #{memberId}</if>
+        <if test="enterpriseId !=null">and enterprise_id = #{enterpriseId}</if>
+        <if test="buryingPointType !=null">and burying_point_type = #{buryingPointType.code}</if>
+        <if test="createTimeBegin !=null">and create_time <![CDATA[ >=  ]]> #{createTimeBegin}</if>
+        <if test="createTimeEnd !=null">and create_time <![CDATA[ <  ]]> #{createTimeEnd}</if>
+        GROUP BY member_id,burying_point_content,burying_point_type,DATE_FORMAT(create_time,'%y%y-%m-%d')
+        ORDER BY dateTime DESC,count DESC
+    </select>
+</mapper>

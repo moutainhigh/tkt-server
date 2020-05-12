@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.EnterpriseMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.Enterprise">
+    <id column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+    <result column="enterprise_name" jdbcType="VARCHAR" property="enterpriseName" />
+    <result column="enterprise_abbr" jdbcType="VARCHAR" property="enterpriseAbbr" />
+    <result column="fhl_id" jdbcType="VARCHAR" property="fhlId" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="update_user" jdbcType="INTEGER" property="updateUser" />
+    <result column="enterprise_desc" jdbcType="VARCHAR" property="enterpriseDesc" />
+    <result column="is_enable" jdbcType="INTEGER" property="isEnable" />
+    <result column="mobile_message" jdbcType="VARCHAR" property="mobileMessage" />
+    <result column="domain_name" jdbcType="VARCHAR" property="domainName" />
+    <result column="service_mobile" jdbcType="VARCHAR" property="serviceMobile" />
+    <result column="home_title" jdbcType="VARCHAR" property="homeTitle" />
+    <result column="logo_image" jdbcType="VARCHAR" property="logoImage" />
+    <result column="backend_type" jdbcType="INTEGER" property="backendType" />
+    <result column="support_normal_login" jdbcType="INTEGER" property="supportNormalLogin" />
+    <result column="extended_login" jdbcType="VARCHAR" property="extendedLogin" />
+    <result column="member_tags" jdbcType="VARCHAR" property="memberTags" />
+    <result column="admin_mobile" jdbcType="VARCHAR" property="adminMobile" />
+    <result column="channel" jdbcType="VARCHAR" property="channel" />
+    <result column="app_id" jdbcType="VARCHAR" property="appId" />
+    <result column="about_us" jdbcType="VARCHAR" property="aboutUs" />
+  </resultMap>
+</mapper>

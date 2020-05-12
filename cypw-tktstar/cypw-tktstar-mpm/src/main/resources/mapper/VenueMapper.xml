@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.VenueMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.Venue">
+        <id column="venue_id" jdbcType="INTEGER" property="venueId"/>
+        <result column="theatre_id" jdbcType="INTEGER" property="theatreId"/>
+        <result column="venue_name" jdbcType="VARCHAR" property="venueName"/>
+        <result column="venue_desc" jdbcType="VARCHAR" property="venueDesc"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="is_enable" jdbcType="INTEGER" property="isEnable"/>
+    </resultMap>
+</mapper>

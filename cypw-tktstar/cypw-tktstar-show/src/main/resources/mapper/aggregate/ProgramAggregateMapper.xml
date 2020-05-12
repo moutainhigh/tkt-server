@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.aggregate.ProgramAggregateMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.aggregate.ProgramAggregate">
+        <id column="program_id" jdbcType="INTEGER" property="programId"/>
+        <result column="program_no" jdbcType="VARCHAR" property="programNo"/>
+        <result column="program_title_brief" jdbcType="VARCHAR" property="programTitleBrief"/>
+        <result column="venue_name" jdbcType="VARCHAR" property="venueName"/>
+        <result column="theatre_name" jdbcType="VARCHAR" property="theatreName"/>
+        <result column="program_price" jdbcType="VARCHAR" property="programPrice"/>
+        <result column="sale_date_begin" jdbcType="TIMESTAMP" property="saleDateBegin"/>
+        <result column="sale_date_end" jdbcType="TIMESTAMP" property="saleDateEnd"/>
+        <result column="sale_status_name" jdbcType="VARCHAR" property="saleStatusName"/>
+        <result column="event_cnt" jdbcType="INTEGER" property="eventCnt"/>
+        <result column="combo_ticket_cnt" jdbcType="INTEGER" property="comboTicketCnt"/>
+        <result column="wechat_show" jdbcType="INTEGER" property="wechatShow"/>
+    </resultMap>
+
+    <sql id="base_aggregate_column">
+    tblprogram.program_id,tblprogram.program_no,tblprogram.program_title_brief,tblprogram.program_price,tblprogram.sale_date_begin,tblprogram.sale_date_end,tblprogram.wechat_show
+  </sql>
+
+    <select id="getProgramList" resultMap="BaseResultMap">
+        select
+        <include refid="base_aggregate_column"/>
+        ,tbl_parameter.parameter_name as sale_status_name
+        ,(select count(*) from tblevent where program_id=tblprogram.program_id) as event_cnt
+        ,(select count(*) from tblprogramtaopiao where program_id=tblprogram.program_id) as combo_ticket_cnt
+        ,tblvenue.venue_name
+        ,tbltheatre.theatre_name
+        from tblprogram inner join tbl_parameter on tblprogram.sale_status=tbl_parameter.parameter_id inner join tbluser
+        on tblprogram.update_user=tbluser.user_id
+        inner join tblvenue on tblprogram.venue_id=tblvenue.venue_id inner join tbltheatre on
+        tblvenue.theatre_id=tbltheatre.theatre_id
+        where tblprogram.is_delete=0 and tblprogram.enterprise_id=#{enterpriseId}
+        order by tblprogram.program_id desc
+    </select>
+
+</mapper>

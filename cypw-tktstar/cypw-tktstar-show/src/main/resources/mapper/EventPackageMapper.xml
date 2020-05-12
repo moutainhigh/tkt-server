@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.EventPackageMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.EventPackage">
+    <id column="package_id" jdbcType="INTEGER" property="packageId" />
+    <result column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="price_id" jdbcType="INTEGER" property="priceId" />
+    <result column="package_value" jdbcType="DECIMAL" property="packageValue" />
+    <result column="package_qty" jdbcType="INTEGER" property="packageQty" />
+    <result column="package_name" jdbcType="VARCHAR" property="packageName" />
+    <result column="package_desc" jdbcType="VARCHAR" property="packageDesc" />
+    <result column="is_enable" jdbcType="INTEGER" property="isEnable" />
+    <result column="begin_date" jdbcType="TIMESTAMP" property="beginDate" />
+    <result column="end_date" jdbcType="TIMESTAMP" property="endDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="update_user" jdbcType="INTEGER" property="updateUser" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+
+</mapper>

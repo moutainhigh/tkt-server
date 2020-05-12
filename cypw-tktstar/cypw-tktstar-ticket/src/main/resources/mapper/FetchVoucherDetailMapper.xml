@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.ticket.mapper.FetchVoucherDetailMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.ticket.model.FetchVoucherDetail">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="voucher_id" jdbcType="INTEGER" property="voucherId" />
+    <result column="ticket_id" jdbcType="INTEGER" property="ticketId" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, voucher_id, ticket_id, enterprise_id
+  </sql>
+</mapper>

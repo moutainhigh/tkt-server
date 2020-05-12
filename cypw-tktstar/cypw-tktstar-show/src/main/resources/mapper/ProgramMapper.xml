@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.ProgramMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.Program">
+    <id column="program_id" jdbcType="INTEGER" property="programId" />
+    <result column="program_no" jdbcType="VARCHAR" property="programNo" />
+    <result column="program_title" jdbcType="VARCHAR" property="programTitle" />
+    <result column="program_title_brief" jdbcType="VARCHAR" property="programTitleBrief" />
+    <result column="venue_id" jdbcType="INTEGER" property="venueId" />
+    <result column="program_type_id" jdbcType="INTEGER" property="programTypeId" />
+    <result column="program_time" jdbcType="VARCHAR" property="programTime" />
+    <result column="program_price" jdbcType="VARCHAR" property="programPrice" />
+    <result column="program_brief" jdbcType="VARCHAR" property="programBrief" />
+    <result column="sale_date_begin" jdbcType="TIMESTAMP" property="saleDateBegin" />
+    <result column="sale_date_end" jdbcType="TIMESTAMP" property="saleDateEnd" />
+    <result column="is_publish" jdbcType="INTEGER" property="isPublish" />
+    <result column="sale_status" jdbcType="INTEGER" property="saleStatus" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="app_sort" jdbcType="INTEGER" property="appSort" />
+    <result column="wechat_sort" jdbcType="INTEGER" property="wechatSort" />
+    <result column="pc_sort" jdbcType="INTEGER" property="pcSort" />
+    <result column="app_recommend" jdbcType="INTEGER" property="appRecommend" />
+    <result column="wechat_recommend" jdbcType="INTEGER" property="wechatRecommend" />
+    <result column="pc_recommend" jdbcType="INTEGER" property="pcRecommend" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="update_user" jdbcType="INTEGER" property="updateUser" />
+    <result column="list_image" jdbcType="VARCHAR" property="listImage" />
+    <result column="detail_image" jdbcType="VARCHAR" property="detailImage" />
+    <result column="program_notice" jdbcType="VARCHAR" property="programNotice" />
+    <result column="app_show" jdbcType="INTEGER" property="appShow" />
+    <result column="wechat_show" jdbcType="INTEGER" property="wechatShow" />
+    <result column="pc_show" jdbcType="INTEGER" property="pcShow" />
+    <result column="delivery_restrict" jdbcType="VARCHAR" property="deliveryRestrict" />
+    <result column="app_payment_restrict" jdbcType="VARCHAR" property="appPaymentRestrict" />
+    <result column="wechat_payment_restrict" jdbcType="VARCHAR" property="wechatPaymentRestrict" />
+    <result column="pc_payment_restrict" jdbcType="VARCHAR" property="pcPaymentRestrict" />
+    <result column="member_restrict" jdbcType="VARCHAR" property="memberRestrict" />
+    <result column="show_time_image" jdbcType="INTEGER" property="showTimeImage" />
+    <result column="show_other_images" jdbcType="VARCHAR" property="showOtherImages" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+    <result column="program_content" jdbcType="LONGVARCHAR" property="programContent" />
+    <result column="support_seat_flag" jdbcType="INTEGER" property="supportSeatFlag" />
+    <result column="support_eticket" jdbcType="INTEGER" property="supportETicket" />
+    <result column="is_official" jdbcType="INTEGER" property="isOfficial" />
+    <result column="support_print_ticket" jdbcType="INTEGER" property="supportPrintTicket" />
+    <result column="sponser_title" jdbcType="VARCHAR" property="sponserTitle" />
+    <result column="sponser_introduce" jdbcType="VARCHAR" property="sponserIntroduce" />
+    <result column="location_name" jdbcType="VARCHAR" property="locationName" />
+    <result column="location_address" jdbcType="VARCHAR" property="locationAddress" />
+    <result column="service_mobile" jdbcType="VARCHAR" property="serviceMobile" />
+    <result column="key_value" jdbcType="VARCHAR" property="keyValue" />
+    <result column="tags" jdbcType="VARCHAR" property="tags" />
+    <result column="checkin_time_type" jdbcType="INTEGER" property="checkinTimeType" />
+    <result column="checkin_count_type" jdbcType="INTEGER" property="checkinCountType" />
+    <result column="checkin_count" jdbcType="INTEGER" property="checkinCount" />
+  </resultMap>
+</mapper>

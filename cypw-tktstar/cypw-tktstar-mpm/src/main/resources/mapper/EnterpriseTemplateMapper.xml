@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.EnterpriseTemplateMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.EnterpriseTemplate">
+    <id column="et_id" jdbcType="INTEGER" property="etId" />
+    <result column="tenant_id" jdbcType="VARCHAR" property="tenantId" />
+    <result column="index_template" jdbcType="VARCHAR" property="indexTemplate" />
+    <result column="index_background_color" jdbcType="VARCHAR" property="indexBackgroundColor" />
+    <result column="merchant_delivery_types" jdbcType="VARCHAR" property="merchantDeliveryTypes" />
+    <result column="merchant_delivery_fee" jdbcType="INTEGER" property="merchantDeliveryFee" />
+    <result column="merchant_delivery_restrict" jdbcType="INTEGER" property="merchantDeliveryRestrict" />
+    <result column="merchant_delivery_company" jdbcType="VARCHAR" property="merchantDeliveryCompany" />
+  </resultMap>
+</mapper>

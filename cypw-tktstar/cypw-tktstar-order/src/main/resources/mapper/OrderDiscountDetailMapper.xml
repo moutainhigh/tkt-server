@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.order.mapper.OrderDiscountDetailMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.order.model.OrderDiscountDetail">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="discount_type" jdbcType="TINYINT" property="discountType" />
+    <result column="discount_amount" jdbcType="INTEGER" property="discountAmount" />
+    <result column="discount_number" jdbcType="INTEGER" property="discountNumber" />
+    <result column="exchange_sku_id" jdbcType="INTEGER" property="exchangeSkuId" />
+    <result column="coupon_code" jdbcType="VARCHAR" property="couponCode" />
+    <result column="Status" jdbcType="TINYINT" property="status" />
+    <result column="coupon_id" jdbcType="INTEGER" property="couponId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, discount_type, discount_amount, discount_number, exchange_sku_id,
+    coupon_code, Status, coupon_id, remark, enterprise_id
+  </sql>
+</mapper>

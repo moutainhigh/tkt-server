@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.order.mapper.OrderInventoryConsumeRecordMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.order.model.OrderInventoryConsumeRecord">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="serial_no" jdbcType="VARCHAR" property="serialNo" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="consume_status" jdbcType="INTEGER" property="consumeStatus" />
+    <result column="consume_type" jdbcType="INTEGER" property="consumeType" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="handle_status" jdbcType="INTEGER" property="handleStatus" />
+    <result column="area_id" jdbcType="INTEGER" property="areaId" />
+    <result column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="consume_time" jdbcType="INTEGER" property="consumeTime" />
+    <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, serial_no, order_id, consume_status, consume_type, status, handle_status, area_id, 
+    event_id, consume_time, member_id, version, enterprise_id
+  </sql>
+</mapper>

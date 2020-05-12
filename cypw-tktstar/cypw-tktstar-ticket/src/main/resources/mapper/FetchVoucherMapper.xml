@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.ticket.mapper.FetchVoucherMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.ticket.model.FetchVoucher">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="voucher_no" jdbcType="VARCHAR" property="voucherNo" />
+    <result column="voucher_type" jdbcType="TINYINT" property="voucherType" />
+    <result column="voucher_desc" jdbcType="VARCHAR" property="voucherDesc" />
+    <result column="handle_type" jdbcType="TINYINT" property="handleType" />
+    <result column="fetch_method" jdbcType="TINYINT" property="fetchMethod" />
+    <result column="machine_id" jdbcType="INTEGER" property="machineId" />
+    <result column="mac_id" jdbcType="VARCHAR" property="macId" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="id_card_name" jdbcType="VARCHAR" property="idCardName" />
+    <result column="fetch_lock_time" jdbcType="TIMESTAMP" property="fetchLockTime" />
+    <result column="fetch_complete_time" jdbcType="TIMESTAMP" property="fetchCompleteTime" />
+    <result column="fetch_code" jdbcType="VARCHAR" property="fetchCode" />
+    <result column="fetch_user_id" jdbcType="INTEGER" property="fetchUserId" />
+    <result column="fetch_user_name" jdbcType="VARCHAR" property="fetchUserName" />
+    <result column="quantity" jdbcType="TINYINT" property="quantity" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, voucher_no, voucher_type, voucher_desc, handle_type, fetch_method, 
+    machine_id, mac_id, id_card, id_card_name, fetch_lock_time, fetch_complete_time, 
+    fetch_code, fetch_user_id, fetch_user_name, quantity, status, enterprise_id
+  </sql>
+</mapper>

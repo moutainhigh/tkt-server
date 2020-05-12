@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.admin.mapper.MenuSubmenuMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.admin.pojo.MenuSubmenu">
+        <id column="menu_id" jdbcType="INTEGER" property="menuId"/>
+        <result column="menu_title" jdbcType="VARCHAR" property="menuTitle"/>
+        <result column="menu_url" jdbcType="VARCHAR" property="menuUrl"/>
+        <result column="menu_icon" jdbcType="VARCHAR" property="menuIcon"/>
+        <result column="menu_permission_key" jdbcType="VARCHAR" property="menuPermissionKey"/>
+        <result column="sort_order" jdbcType="INTEGER" property="sortOrder"/>
+        <result column="parent_id" jdbcType="INTEGER" property="parentId"/>
+        <result column="is_enable" jdbcType="INTEGER" property="isEnable"/>
+        <result column="module_id" jdbcType="INTEGER" property="moduleId"/>
+    </resultMap>
+
+</mapper>

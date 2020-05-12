@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.TemplateMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.Template">
+        <id column="template_id" jdbcType="INTEGER" property="templateId"/>
+        <result column="venue_id" jdbcType="INTEGER" property="venueId"/>
+        <result column="template_name" jdbcType="VARCHAR" property="templateName"/>
+        <result column="template_desc" jdbcType="VARCHAR" property="templateDesc"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="is_enable" jdbcType="INTEGER" property="isEnable"/>
+        <result column="is_delete" jdbcType="INTEGER" property="isDelete"/>
+        <result column="map_type_id" jdbcType="INTEGER" property="mapTypeId"/>
+        <result column="template_map" jdbcType="LONGVARCHAR" property="templateMap"/>
+        <result column="one_svg" jdbcType="LONGVARCHAR" property="oneSvg"/>
+    </resultMap>
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mall.mapper.MerchandiseMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.mall.model.Merchandise">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="merchandise_id" jdbcType="INTEGER" property="merchandiseId" />
+    <result column="merchandise_code" jdbcType="VARCHAR" property="merchandiseCode" />
+    <result column="merchandise_name" jdbcType="VARCHAR" property="merchandiseName" />
+    <result column="merchandise_brief" jdbcType="VARCHAR" property="merchandiseBrief" />
+    <result column="merchandise_image" jdbcType="VARCHAR" property="merchandiseImage" />
+    <result column="merchandise_price" jdbcType="DECIMAL" property="merchandisePrice" />
+    <result column="begin_date" jdbcType="TIMESTAMP" property="beginDate" />
+    <result column="end_date" jdbcType="TIMESTAMP" property="endDate" />
+    <result column="merchandise_limit_cnt" jdbcType="INTEGER" property="merchandiseLimitCnt" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="update_user" jdbcType="INTEGER" property="updateUser" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+    <result column="is_enable" jdbcType="INTEGER" property="isEnable" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="sort_order" jdbcType="INTEGER" property="sortOrder" />
+    <result column="purchase_notice" jdbcType="VARCHAR" property="purchaseNotice" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.mtl.cypw.mall.model.Merchandise">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="merchandise_content" jdbcType="LONGVARCHAR" property="merchandiseContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    merchandise_id, merchandise_code, merchandise_name, merchandise_brief, merchandise_image, 
+    delivery_type_id, delivery_ids, pick_up_address, begin_date, end_date, original_price, 
+    merchandise_price, merchandise_limit_cnt, merchandise_stock, merchandise_sales_qty, 
+    add_date, update_date, add_user, update_user, enterprise_id, is_enable, is_delete, 
+    sort_order, merchandise_tags, merchandise_tags2, lock_date, purchase_notice
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    merchandise_content
+  </sql>
+</mapper>

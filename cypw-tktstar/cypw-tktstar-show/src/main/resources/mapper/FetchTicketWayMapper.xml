@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.FetchTicketWayMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.FetchTicketWay">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="program_id" jdbcType="INTEGER" property="programId" />
+    <result column="deliver_type" jdbcType="TINYINT" property="deliverType" />
+    <result column="need_idcard" jdbcType="TINYINT" property="needIdcard" />
+    <result column="tips" jdbcType="VARCHAR" property="tips" />
+    <result column="express_fee" jdbcType="INTEGER" property="expressFee" />
+    <result column="fetch_address" jdbcType="VARCHAR" property="fetchAddress" />
+    <result column="contact_mobile" jdbcType="VARCHAR" property="contactMobile" />
+    <result column="fetch_time_desc" jdbcType="VARCHAR" property="fetchTimeDesc" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, program_id, deliver_type, need_idcard, tips, express_fee, fetch_address, contact_mobile, 
+    fetch_time_desc, enterprise_id
+  </sql>
+</mapper>

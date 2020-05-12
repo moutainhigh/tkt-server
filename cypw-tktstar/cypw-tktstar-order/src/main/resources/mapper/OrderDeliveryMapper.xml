@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.order.mapper.OrderDeliveryMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.order.model.OrderDelivery">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="deliver_type" jdbcType="TINYINT" property="deliverType" />
+    <result column="delivery_status" jdbcType="TINYINT" property="deliveryStatus" />
+    <result column="need_idcard" jdbcType="TINYINT" property="needIdcard" />
+    <result column="idcard_type" jdbcType="TINYINT" property="idcardType" />
+    <result column="addressee_idcard" jdbcType="VARCHAR" property="addresseeIdcard" />
+    <result column="province_name" jdbcType="VARCHAR" property="provinceName" />
+    <result column="city_name" jdbcType="VARCHAR" property="cityName" />
+    <result column="district_name" jdbcType="VARCHAR" property="districtName" />
+    <result column="detailed_address" jdbcType="VARCHAR" property="detailedAddress" />
+    <result column="post_code" jdbcType="VARCHAR" property="postCode" />
+    <result column="addressee_name" jdbcType="VARCHAR" property="addresseeName" />
+    <result column="addressee_mobile" jdbcType="VARCHAR" property="addresseeMobile" />
+    <result column="express_company" jdbcType="VARCHAR" property="expressCompany" />
+    <result column="express_no" jdbcType="VARCHAR" property="expressNo" />
+    <result column="express_fee" jdbcType="INTEGER" property="expressFee" />
+    <result column="deliver_time" jdbcType="TIMESTAMP" property="deliverTime" />
+    <result column="delivered_time" jdbcType="TIMESTAMP" property="deliveredTime" />
+    <result column="locale_address" jdbcType="VARCHAR" property="localeAddress" />
+    <result column="locale_contact" jdbcType="VARCHAR" property="localeContact" />
+    <result column="fetch_code" jdbcType="VARCHAR" property="fetchCode" />
+    <result column="fetch_qrcode" jdbcType="VARCHAR" property="fetchQrcode" />
+    <result column="fetch_status" jdbcType="INTEGER" property="fetchStatus" />
+    <result column="fetched_time" jdbcType="TIMESTAMP" property="fetchedTime" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, deliver_type, delivery_status, need_idcard, idcard_type, addressee_idcard, 
+    province_name, city_name, district_name, detailed_address, post_code, addressee_name, 
+    addressee_mobile, express_company, express_no, express_fee, deliver_time, delivered_time, 
+    locale_address, locale_contact, fetch_code, fetch_qrcode, fetch_status, fetched_time, enterprise_id
+  </sql>
+
+    <update id="updateFetchStatus" parameterType="map">
+      UPDATE
+        cy_order_delivery
+      SET
+        fetch_status = #{targetStatus},
+        fetched_time = #{fetchTime},
+        update_time = NOW()
+      WHERE
+        order_id = #{orderId} AND fetch_status = #{oldStatus}
+    </update>
+  <!-- 绑定物流编号 -->
+  <update id="updateExpressNo">
+    update cy_order_delivery set express_no = #{orderDelivery.expressNo},delivery_status = #{targetStatus} where order_id =  #{orderDelivery.orderId} and delivery_status = #{sourceStatus} and deleted = 0
+  </update>
+</mapper>

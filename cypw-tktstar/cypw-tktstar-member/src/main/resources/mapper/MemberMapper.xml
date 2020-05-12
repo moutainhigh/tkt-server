@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.member.mapper.MemberMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.member.pojo.Member">
+    <id column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="member_name" jdbcType="VARCHAR" property="memberName" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="member_mobile" jdbcType="VARCHAR" property="memberMobile" />
+    <result column="member_desc" jdbcType="VARCHAR" property="memberDesc" />
+    <result column="member_pass" jdbcType="VARCHAR" property="memberPass" />
+    <result column="temp_pass" jdbcType="VARCHAR" property="tempPass" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="update_user" jdbcType="INTEGER" property="updateUser" />
+    <result column="first_order_date" jdbcType="TIMESTAMP" property="firstOrderDate" />
+    <result column="member_level_id" jdbcType="INTEGER" property="memberLevelId" />
+    <result column="is_blacklist" jdbcType="INTEGER" property="isBlacklist" />
+    <result column="keyAccount_id" jdbcType="INTEGER" property="keyaccountId" />
+    <result column="customer_tag_ids" jdbcType="VARCHAR" property="customerTagIds" />
+    <result column="member_mileage" jdbcType="INTEGER" property="memberMileage" />
+    <result column="member_deposit" jdbcType="INTEGER" property="memberDeposit" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="member_token" jdbcType="VARCHAR" property="memberToken" />
+    <result column="token_date" jdbcType="TIMESTAMP" property="tokenDate" />
+    <result column="token_desc" jdbcType="VARCHAR" property="tokenDesc" />
+    <result column="is_default" jdbcType="INTEGER" property="isDefault" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="contact_name" jdbcType="VARCHAR" property="contactName" />
+    <result column="contact_desc" jdbcType="VARCHAR" property="contactDesc" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+    <result column="member_email" jdbcType="VARCHAR" property="memberEmail" />
+    <result column="member_image" jdbcType="VARCHAR" property="memberImage" />
+    <result column="default_address_id" jdbcType="VARCHAR" property="defaultAddressId" />
+    <result column="third_party_user_id" jdbcType="VARCHAR" property="thirdPartyUserId" />
+  </resultMap>
+</mapper>

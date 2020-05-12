@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.coupon.mapper.PromotionCouponMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.coupon.pojo.PromotionCoupon">
+    <id column="coupon_id" jdbcType="INTEGER" property="couponId" />
+    <result column="promotion_id" jdbcType="INTEGER" property="promotionId" />
+    <result column="coupon_code" jdbcType="VARCHAR" property="couponCode" />
+    <result column="coupon_pass" jdbcType="VARCHAR" property="couponPass" />
+    <result column="is_used" jdbcType="INTEGER" property="isUsed" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="use_date" jdbcType="TIMESTAMP" property="useDate" />
+    <result column="is_binded" jdbcType="INTEGER" property="isBinded" />
+    <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="bind_date" jdbcType="TIMESTAMP" property="bindDate" />
+    <result column="is_enable" jdbcType="INTEGER" property="isEnable" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="begin_date" jdbcType="TIMESTAMP" property="beginDate" />
+    <result column="end_date" jdbcType="TIMESTAMP" property="endDate" />
+    <result column="use_log" jdbcType="VARCHAR" property="useLog" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+
+</mapper>

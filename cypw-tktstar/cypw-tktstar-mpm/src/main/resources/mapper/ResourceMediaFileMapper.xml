@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.ResourceMediaFileMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.ResourceMediaFile">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="file_src" jdbcType="VARCHAR" property="fileSrc" />
+    <result column="file_type" jdbcType="TINYINT" property="fileType" />
+    <result column="business_type" jdbcType="TINYINT" property="businessType" />
+    <result column="business_id" jdbcType="INTEGER" property="businessId" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="upload_time" jdbcType="TIMESTAMP" property="uploadTime" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, file_src, file_type, business_type, business_id, status, upload_time, enterprise_id
+  </sql>
+</mapper>

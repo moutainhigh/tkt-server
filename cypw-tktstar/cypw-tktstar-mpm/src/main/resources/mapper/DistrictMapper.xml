@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.DistrictMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.District">
+    <id column="district_code" jdbcType="VARCHAR" property="districtCode" />
+    <result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+    <result column="district_brief_name" jdbcType="VARCHAR" property="districtBriefName" />
+    <result column="district_name" jdbcType="VARCHAR" property="districtName" />
+  </resultMap>
+
+</mapper>

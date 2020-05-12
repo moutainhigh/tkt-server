@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.EnterpriseProgramTypeMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.EnterpriseProgramType">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="program_type_id" jdbcType="INTEGER" property="programTypeId"/>
+        <result column="program_type_title" jdbcType="VARCHAR" property="programTypeTitle"/>
+        <result column="sort_order" jdbcType="INTEGER" property="sortOrder"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="deleted" jdbcType="INTEGER" property="deleted"/>
+    </resultMap>
+
+</mapper>

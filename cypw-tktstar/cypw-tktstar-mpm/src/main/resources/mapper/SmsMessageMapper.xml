@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.SmsMessageMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.SmsMessage">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sms_id" jdbcType="VARCHAR" property="smsId" />
+    <result column="product_channel_id" jdbcType="VARCHAR" property="productChannelId" />
+    <result column="product" jdbcType="VARCHAR" property="product" />
+    <result column="channel" jdbcType="VARCHAR" property="channel" />
+    <result column="template_code" jdbcType="VARCHAR" property="templateCode" />
+    <result column="biz_id" jdbcType="VARCHAR" property="bizId" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="cellphone" jdbcType="VARCHAR" property="cellphone" />
+    <result column="variables" jdbcType="VARCHAR" property="variables" />
+    <result column="send_state" jdbcType="INTEGER" property="sendState" />
+    <result column="fail_count" jdbcType="INTEGER" property="failCount" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="deleted" jdbcType="INTEGER" property="deleted" />
+  </resultMap>
+
+</mapper>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.order.mapper.OrderTicketMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.order.model.OrderTicket">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="order_item_id" jdbcType="INTEGER" property="orderItemId" />
+    <result column="zone_id" jdbcType="INTEGER" property="zoneId" />
+    <result column="zone_name" jdbcType="VARCHAR" property="zoneName" />
+    <result column="seat_id" jdbcType="INTEGER" property="seatId" />
+    <result column="seat_name" jdbcType="VARCHAR" property="seatName" />
+    <result column="coupon_id" jdbcType="INTEGER" property="couponId" />
+    <result column="price_id" jdbcType="INTEGER" property="priceId" />
+    <result column="package_number" jdbcType="TINYINT" property="packageNumber" />
+    <result column="average_price" jdbcType="INTEGER" property="averagePrice" />
+    <result column="ticket_price" jdbcType="INTEGER" property="ticketPrice" />
+    <result column="origin_price" jdbcType="INTEGER" property="originPrice" />
+    <result column="check_code" jdbcType="VARCHAR" property="checkCode" />
+    <result column="qr_code" jdbcType="VARCHAR" property="qrCode" />
+    <result column="check_status" jdbcType="INTEGER" property="checkStatus" />
+    <result column="check_time" jdbcType="TIMESTAMP" property="checkTime" />
+    <result column="check_channel" jdbcType="INTEGER" property="checkChannel" />
+    <result column="order_identification_id" jdbcType="INTEGER" property="orderIdentificationId" />
+    <result column="ticket_desc" jdbcType="VARCHAR" property="ticketDesc" />
+    <result column="code_source" jdbcType="INTEGER" property="codeSource" />
+    <result column="print_status" jdbcType="INTEGER" property="printStatus" />
+    <result column="repeat_print_count" jdbcType="INTEGER" property="repeatPrintCount" />
+    <result column="chip_tid" jdbcType="VARCHAR" property="chipTid" />
+    <result column="fetch_status" jdbcType="TINYINT" property="fetchStatus" />
+    <result column="fetched_time" jdbcType="TIMESTAMP" property="fetchedTime" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, order_item_id, zone_id, zone_name, seat_id, seat_name, coupon_id, price_id, package_number, average_price
+    ticket_price, origin_price, check_code, qr_code, check_status, check_time, check_channel, order_identification_id,
+    ticket_desc, code_source, print_status, repeat_print_count, chip_tid, fetch_status, fetched_time, enterprise_id
+  </sql>
+
+    <sql id="Join_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        t.id, t.order_id, t.order_item_id, t.zone_id, t.zone_name, t.seat_id, t.seat_name, t.coupon_id, t.price_id,
+        t.package_number, t.average_price, t.ticket_price, t.origin_price, t.check_code, t.qr_code, t.check_status,
+        t.check_time, t.check_channel, t.order_identification_id, t.ticket_desc, t.code_source, t.print_status,
+        t.repeat_print_count, t.chip_tid, t.fetch_status, t.fetched_time, t.enterprise_id
+    </sql>
+
+    <select id="selectByOrderMobileNo" parameterType="map" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Join_Column_List"/>
+        FROM  cy_order_ticket t
+        LEFT JOIN cy_order o ON o.id = t.order_id
+        WHERE o.order_type = 1
+        AND o.deliver_type = 5
+        AND o.order_status in (9, 10)
+        AND o.mobile_no = #{mobileNo}
+        AND o.enterprise_id = #{enterpriseId}
+        AND t.check_code IS NOT NULL
+        AND t.check_status != 2
+        ORDER BY order_time DESC
+    </select>
+
+    <update id="updateFetchStatus" parameterType="map">
+       UPDATE
+        cy_order_ticket
+      SET
+        fetch_status = #{targetStatus},
+        fetched_time = #{fetchTime},
+        update_time = NOW()
+      WHERE
+        order_id = #{orderId}
+        AND id IN
+          <foreach collection="ticketIds" item="ticketId" index="index" open="(" close=")" separator=",">
+              #{ticketId}
+          </foreach>
+        AND fetch_status IN
+          <foreach collection="oldStatusList" item="status" index="index" open="(" close=")" separator=",">
+              #{status}
+          </foreach>
+    </update>
+</mapper>

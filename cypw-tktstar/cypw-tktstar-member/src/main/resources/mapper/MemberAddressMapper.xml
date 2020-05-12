@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.member.mapper.MemberAddressMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.member.pojo.MemberAddress">
+    <id column="address_id" jdbcType="INTEGER" property="addressId" />
+    <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="delivery_name" jdbcType="VARCHAR" property="deliveryName" />
+    <result column="delivery_mobile" jdbcType="VARCHAR" property="deliveryMobile" />
+    <result column="province_code" jdbcType="INTEGER" property="provinceCode" />
+    <result column="province_name" jdbcType="VARCHAR" property="provinceName" />
+    <result column="city_code" jdbcType="INTEGER" property="cityCode" />
+    <result column="city_name" jdbcType="VARCHAR" property="cityName" />
+    <result column="district_code" jdbcType="INTEGER" property="districtCode" />
+    <result column="district_name" jdbcType="VARCHAR" property="districtName" />
+    <result column="delivery_address" jdbcType="VARCHAR" property="deliveryAddress" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+    <result column="is_default" jdbcType="TINYINT" property="isDefault" />
+  </resultMap>
+</mapper>

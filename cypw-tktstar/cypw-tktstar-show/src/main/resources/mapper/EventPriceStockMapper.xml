@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.EventPriceStockMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.EventPriceStock">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="price_id" jdbcType="INTEGER" property="priceId" />
+    <result column="stock_qty" jdbcType="INTEGER" property="stockQty" />
+    <result column="add_qty" jdbcType="INTEGER" property="addQty" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+  </resultMap>
+
+</mapper>

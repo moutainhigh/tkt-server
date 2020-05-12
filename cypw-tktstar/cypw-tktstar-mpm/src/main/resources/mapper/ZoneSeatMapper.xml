@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.ZoneSeatMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.ZoneSeat">
+        <id column="zone_seat_id" jdbcType="INTEGER" property="zoneSeatId"/>
+        <result column="zone_id" jdbcType="INTEGER" property="zoneId"/>
+        <result column="row_name" jdbcType="VARCHAR" property="rowName"/>
+        <result column="col_name" jdbcType="VARCHAR" property="colName"/>
+        <result column="row_int" jdbcType="INTEGER" property="rowInt"/>
+        <result column="col_int" jdbcType="INTEGER" property="colInt"/>
+        <result column="only_prefix" jdbcType="INTEGER" property="onlyPrefix"/>
+        <result column="seat_type" jdbcType="VARCHAR" property="seatType"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+    </resultMap>
+
+</mapper>

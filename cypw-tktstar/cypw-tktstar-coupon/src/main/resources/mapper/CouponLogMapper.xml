@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.coupon.mapper.CouponLogMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.coupon.pojo.Couponlog">
+    <id column="log_id" jdbcType="INTEGER" property="logId" />
+    <result column="promotion_id" jdbcType="INTEGER" property="promotionId" />
+    <result column="coupon_prefix" jdbcType="VARCHAR" property="couponPrefix" />
+    <result column="coupon_digit" jdbcType="VARCHAR" property="couponDigit" />
+    <result column="total_qty" jdbcType="INTEGER" property="totalQty" />
+    <result column="total_used" jdbcType="INTEGER" property="totalUsed" />
+    <result column="log_desc" jdbcType="VARCHAR" property="logDesc" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+  </resultMap>
+
+</mapper>

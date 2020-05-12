@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.msg.mapper.MsgTemplateVariableMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.msg.model.MsgTemplateVariable">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="template_config_id" jdbcType="INTEGER" property="templateConfigId"/>
+        <result column="template_code" jdbcType="VARCHAR" property="templateCode"/>
+        <result column="variable_name" jdbcType="VARCHAR" property="variableName"/>
+        <result column="variable_default_value" jdbcType="VARCHAR" property="variableDefaultValue"/>
+        <result column="variable_describe" jdbcType="VARCHAR" property="variableDescribe"/>
+        <result column="ext_1" jdbcType="VARCHAR" property="ext1"/>
+        <result column="is_enable" jdbcType="INTEGER" property="isEnable"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="deleted" jdbcType="INTEGER" property="deleted"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+</mapper>

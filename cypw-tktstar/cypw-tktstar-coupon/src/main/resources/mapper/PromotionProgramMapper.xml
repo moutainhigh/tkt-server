@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.coupon.mapper.PromotionProgramMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.coupon.pojo.PromotionProgram">
+    <id column="promotion_program_id" jdbcType="INTEGER" property="promotionProgramId" />
+    <result column="promotion_id" jdbcType="INTEGER" property="promotionId" />
+    <result column="program_id" jdbcType="INTEGER" property="programId" />
+    <result column="is_all" jdbcType="INTEGER" property="isAll" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+
+</mapper>

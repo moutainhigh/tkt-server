@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.ProgramDistributionMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.ProgramDistribution">
+    <id column="distribution_id" jdbcType="INTEGER" property="distributionId" />
+    <result column="program_id" jdbcType="INTEGER" property="programId" />
+    <result column="distributor_id" jdbcType="INTEGER" property="distributorId" />
+    <result column="distribution_code" jdbcType="VARCHAR" property="distributionCode" />
+    <result column="distribution_rate" jdbcType="INTEGER" property="distributionRate" />
+    <result column="begin_date" jdbcType="TIMESTAMP" property="beginDate" />
+    <result column="end_date" jdbcType="TIMESTAMP" property="endDate" />
+    <result column="is_enable" jdbcType="INTEGER" property="isEnable" />
+    <result column="distribution_desc" jdbcType="VARCHAR" property="distributionDesc" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="update_user" jdbcType="INTEGER" property="updateUser" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.order.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.order.model.Order">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="order_no" jdbcType="VARCHAR" property="orderNo"/>
+        <result column="order_title" jdbcType="VARCHAR" property="orderTitle"/>
+        <result column="origin_amount" jdbcType="INTEGER" property="originAmount"/>
+        <result column="actual_amount" jdbcType="INTEGER" property="actualAmount"/>
+        <result column="ticket_amount" jdbcType="INTEGER" property="ticketAmount"/>
+        <result column="gift_card_amount" jdbcType="INTEGER" property="giftCardAmount"/>
+        <result column="settle_amount" jdbcType="INTEGER" property="settleAmount"/>
+        <result column="delivery_fee" jdbcType="INTEGER" property="deliveryFee"/>
+        <result column="discount_fee" jdbcType="INTEGER" property="discountFee"/>
+        <result column="order_type" jdbcType="INTEGER" property="orderType"/>
+        <result column="order_status" jdbcType="TINYINT" property="orderStatus"/>
+        <result column="deliver_type" jdbcType="TINYINT" property="deliverType"/>
+        <result column="payment_type_id" jdbcType="TINYINT" property="paymentTypeId"/>
+        <result column="fetch_qrcode" jdbcType="VARCHAR" property="fetchQrcode"/>
+        <result column="fetch_code" jdbcType="VARCHAR" property="fetchCode"/>
+        <result column="mtl_user_id" jdbcType="VARCHAR" property="mtlUserId"/>
+        <result column="member_id" jdbcType="INTEGER" property="memberId"/>
+        <result column="mobile_no" jdbcType="VARCHAR" property="mobileNo"/>
+        <result column="wechat_open_id" jdbcType="VARCHAR" property="wechatOpenId"/>
+        <result column="wechat_app_id" jdbcType="VARCHAR" property="wechatAppId"/>
+        <result column="client_ip" jdbcType="VARCHAR" property="clientIp"/>
+        <result column="channel_id" jdbcType="TINYINT" property="channelId"/>
+        <result column="platform_id" jdbcType="TINYINT" property="platformId"/>
+        <result column="promotion_id" jdbcType="INTEGER" property="promotionId"/>
+        <result column="gift_card_id" jdbcType="INTEGER" property="giftCardId"/>
+        <result column="order_time" jdbcType="TIMESTAMP" property="orderTime"/>
+        <result column="cancel_time" jdbcType="TIMESTAMP" property="cancelTime"/>
+        <result column="paid_time" jdbcType="TIMESTAMP" property="paidTime"/>
+        <result column="expire_time" jdbcType="TIMESTAMP" property="expireTime"/>
+        <result column="locked_time" jdbcType="TIMESTAMP" property="lockedTime"/>
+        <result column="ticketed_time" jdbcType="TIMESTAMP" property="ticketedTime"/>
+        <result column="consumed_time" jdbcType="TIMESTAMP" property="consumedTime"/>
+        <result column="product_id" jdbcType="INTEGER" property="productId"/>
+        <result column="product_name" jdbcType="VARCHAR" property="productName"/>
+        <result column="event_id" jdbcType="INTEGER" property="eventId"/>
+        <result column="event_name" jdbcType="VARCHAR" property="eventName"/>
+        <result column="venue_id" jdbcType="INTEGER" property="venueId"/>
+        <result column="venue_name" jdbcType="VARCHAR" property="venueName"/>
+        <result column="transaction_flow_no" jdbcType="VARCHAR" property="transactionFlowNo"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        id, order_no, order_title, origin_amount, actual_amount, ticket_amount, gift_card_amount,
+        settle_amount, delivery_fee, discount_fee, order_type, order_status, deliver_type,
+        payment_type_id, fetch_qrcode, fetch_code, mtl_user_id, member_id, mobile_no, wechat_open_id,
+        wechat_app_id, client_ip, channel_id, platform_id, promotion_id, gift_card_id, order_time, cancel_time,
+        paid_time, expire_time, locked_time, ticketed_time, consumed_time, product_id, product_name,
+        event_id, event_name, venue_id, venue_name, transaction_flow_no, remark, enterprise_id
+    </sql>
+    <!-- 确认收货-->
+    <update id="updateOrderStatusByConfirm">
+    update cy_order set order_status = #{targetStatus} where id =#{id} and order_status = #{sourceStatus} and deleted = 0
+  </update>
+</mapper>

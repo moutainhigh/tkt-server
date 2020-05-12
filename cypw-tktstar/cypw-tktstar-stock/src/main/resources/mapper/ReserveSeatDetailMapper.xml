@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.stock.mapper.ReserveSeatDetailMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.stock.model.ReserveSeatDetail">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="reserve_id" jdbcType="INTEGER" property="reserveId" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="zone_id" jdbcType="INTEGER" property="zoneId" />
+    <result column="zone_name" jdbcType="VARCHAR" property="zoneName" />
+    <result column="price_id" jdbcType="INTEGER" property="priceId" />
+    <result column="price_value" jdbcType="INTEGER" property="priceValue" />
+    <result column="seat_id" jdbcType="INTEGER" property="seatId" />
+    <result column="seat_name" jdbcType="VARCHAR" property="seatName" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, reserve_id, status, event_id, zone_id, zone_name, price_id, price_value, seat_id, 
+    seat_name, enterprise_id
+  </sql>
+</mapper>

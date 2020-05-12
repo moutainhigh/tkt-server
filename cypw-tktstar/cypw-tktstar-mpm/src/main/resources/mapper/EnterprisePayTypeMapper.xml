@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.EnterprisePayTypeMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.EnterprisePayType">
+    <id column="enterprise_pay_type_id" jdbcType="INTEGER" property="enterprisePayTypeId" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+    <result column="pay_type_id" jdbcType="INTEGER" property="payTypeId" />
+    <result column="pay_type_name" jdbcType="VARCHAR" property="payTypeName" />
+    <result column="config_json" jdbcType="VARCHAR" property="configJson" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="update_user" jdbcType="INTEGER" property="updateUser" />
+    <result column="is_enable" jdbcType="INTEGER" property="isEnable" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="transaction_fee_rate" jdbcType="DECIMAL" property="transactionFeeRate" />
+  </resultMap>
+
+</mapper>

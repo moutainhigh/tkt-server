@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.ZoneMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.Zone">
+        <id column="zone_id" jdbcType="INTEGER" property="zoneId"/>
+        <result column="template_id" jdbcType="INTEGER" property="templateId"/>
+        <result column="svg_id" jdbcType="VARCHAR" property="svgId"/>
+        <result column="zone_name" jdbcType="VARCHAR" property="zoneName"/>
+        <result column="zone_entrance" jdbcType="VARCHAR" property="zoneEntrance"/>
+        <result column="zone_remark" jdbcType="VARCHAR" property="zoneRemark"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="begin_x" jdbcType="INTEGER" property="beginX"/>
+        <result column="begin_y" jdbcType="INTEGER" property="beginY"/>
+        <result column="seat_height" jdbcType="INTEGER" property="seatHeight"/>
+        <result column="seat_width" jdbcType="INTEGER" property="seatWidth"/>
+        <result column="seat_margin" jdbcType="INTEGER" property="seatMargin"/>
+    </resultMap>
+
+</mapper>

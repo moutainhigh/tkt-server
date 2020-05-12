@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.ActivityMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.Activity">
+        <id column="activity_id" jdbcType="INTEGER" property="activityId"/>
+        <result column="activity_name" jdbcType="VARCHAR" property="activityName"/>
+        <result column="activity_brief" jdbcType="VARCHAR" property="activityBrief"/>
+        <result column="activity_image" jdbcType="VARCHAR" property="activityImage"/>
+        <result column="sort_order" jdbcType="INTEGER" property="sortOrder"/>
+        <result column="begin_date" jdbcType="TIMESTAMP" property="beginDate"/>
+        <result column="end_date" jdbcType="TIMESTAMP" property="endDate"/>
+        <result column="type_id" jdbcType="INTEGER" property="typeId"/>
+        <result column="activity_url" jdbcType="VARCHAR" property="activityUrl"/>
+        <result column="is_enable" jdbcType="INTEGER" property="isEnable"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="is_delete" jdbcType="INTEGER" property="isDelete"/>
+        <result column="activity_content" jdbcType="LONGVARCHAR" property="activityContent"/>
+    </resultMap>
+
+</mapper>

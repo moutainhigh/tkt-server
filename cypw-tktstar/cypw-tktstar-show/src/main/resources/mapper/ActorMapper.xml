@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.show.mapper.ActorMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.show.pojo.Actor">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="program_id" jdbcType="INTEGER" property="programId" />
+    <result column="actor_name" jdbcType="VARCHAR" property="actorName" />
+    <result column="actor_image" jdbcType="VARCHAR" property="actorImage" />
+    <result column="sort_order" jdbcType="TINYINT" property="sortOrder" />
+    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+</mapper>

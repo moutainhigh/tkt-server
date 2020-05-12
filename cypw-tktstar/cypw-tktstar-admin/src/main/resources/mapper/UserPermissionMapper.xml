@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.admin.mapper.UserPermissionMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.admin.pojo.UserPermission">
+        <id column="up_id" jdbcType="INTEGER" property="upId"/>
+        <result column="role_id" jdbcType="VARCHAR" property="roleId"/>
+        <result column="permission_id" jdbcType="VARCHAR" property="permissionId"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+    </resultMap>
+
+</mapper>

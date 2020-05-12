@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.admin.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.admin.pojo.User">
+        <id column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="group_id" jdbcType="INTEGER" property="groupId"/>
+        <result column="login_name" jdbcType="VARCHAR" property="loginName"/>
+        <result column="login_pass" jdbcType="VARCHAR" property="loginPass"/>
+        <result column="person_name" jdbcType="VARCHAR" property="personName"/>
+        <result column="person_mobile" jdbcType="VARCHAR" property="personMobile"/>
+        <result column="user_desc" jdbcType="VARCHAR" property="userDesc"/>
+        <result column="role_id" jdbcType="INTEGER" property="roleId"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="update_name" jdbcType="VARCHAR" property="updateName"/>
+        <result column="is_enable" jdbcType="INTEGER" property="isEnable"/>
+        <result column="is_delete" jdbcType="INTEGER" property="isDelete"/>
+        <result column="is_administrator" jdbcType="INTEGER" property="isAdministrator"/>
+        <result column="token_id" jdbcType="VARCHAR" property="tokenId"/>
+        <result column="company_id" jdbcType="INTEGER" property="companyId"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="is_print" jdbcType="INTEGER" property="isPrint"/>
+    </resultMap>
+
+</mapper>

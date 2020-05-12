@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.msg.mapper.MsgSendReceiverMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.msg.model.MsgSendReceiver">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="send_record_id" jdbcType="INTEGER" property="sendRecordId"/>
+        <result column="member_id" jdbcType="INTEGER" property="memberId"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="open_id" jdbcType="VARCHAR" property="openId"/>
+        <result column="send_status" jdbcType="VARCHAR" property="sendStatus"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="read_status" jdbcType="INTEGER" property="readStatus"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="deleted" jdbcType="INTEGER" property="deleted"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.mpm.mapper.EnterpriseSearchMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.mpm.model.EnterpriseSearch">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="search_key" jdbcType="VARCHAR" property="searchKey"/>
+        <result column="guess_key" jdbcType="VARCHAR" property="guessKey"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="create_user" jdbcType="INTEGER" property="createUser"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.order.mapper.OrderOperateLogMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.order.model.OrderOperateLog">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="operator_id" jdbcType="INTEGER" property="operatorId" />
+    <result column="operator_name" jdbcType="VARCHAR" property="operatorName" />
+    <result column="operate_type" jdbcType="VARCHAR" property="operateType" />
+    <result column="before_status" jdbcType="VARCHAR" property="beforeStatus" />
+    <result column="after_status" jdbcType="VARCHAR" property="afterStatus" />
+    <result column="record_json" jdbcType="VARCHAR" property="recordJson" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, operator_id, operator_name, operate_type, before_status, after_status, 
+    record_json, remark, enterprise_id
+  </sql>
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.member.mapper.CheckInUserMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.member.pojo.CheckInUser">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="user_pass" jdbcType="VARCHAR" property="userPass"/>
+        <result column="person_name" jdbcType="VARCHAR" property="personName"/>
+        <result column="begin_date" jdbcType="TIMESTAMP" property="beginDate"/>
+        <result column="end_date" jdbcType="TIMESTAMP" property="endDate"/>
+        <result column="is_enable" jdbcType="INTEGER" property="isEnable"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="add_date" jdbcType="TIMESTAMP" property="addDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="add_user" jdbcType="INTEGER" property="addUser"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, enterprise_id, user_name, user_pass, person_name, begin_date, end_date, is_enable, 
+    remark, add_date, update_date, add_user, update_user
+  </sql>
+</mapper>

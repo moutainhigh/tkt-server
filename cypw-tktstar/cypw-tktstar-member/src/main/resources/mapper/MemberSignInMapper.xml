@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.member.mapper.MemberSignInMapper">
+    <resultMap id="BaseResultMap" type="com.mtl.cypw.member.pojo.MemberSignIn">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="member_id" jdbcType="INTEGER" property="memberId"/>
+        <result column="order_id" jdbcType="INTEGER" property="orderId"/>
+        <result column="program_id" jdbcType="INTEGER" property="programId"/>
+        <result column="event_id" jdbcType="INTEGER" property="eventId"/>
+        <result column="theatre_id" jdbcType="INTEGER" property="theatreId"/>
+        <result column="sign_in_address" jdbcType="VARCHAR" property="signInAddress"/>
+        <result column="longitude" jdbcType="DOUBLE" property="longitude"/>
+        <result column="latitude" jdbcType="DOUBLE" property="latitude"/>
+        <result column="type" jdbcType="TINYINT" property="type"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId"/>
+        <result column="deleted" jdbcType="TINYINT" property="deleted"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, member_id, order_id, program_id, event_id, theatre_id, sign_in_address, longitude,
+        latitude, type, remark, enterprise_id, deleted, create_time, update_time
+    </sql>
+</mapper>

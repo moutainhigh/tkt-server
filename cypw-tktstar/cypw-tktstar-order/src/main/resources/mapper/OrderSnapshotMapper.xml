@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.order.mapper.OrderSnapshotMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.order.model.OrderSnapshot">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="product_id" jdbcType="INTEGER" property="productId" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="detail_poster_url" jdbcType="VARCHAR" property="detailPosterUrl" />
+    <result column="list_poster_url" jdbcType="VARCHAR" property="listPosterUrl" />
+    <result column="event_id" jdbcType="INTEGER" property="eventId" />
+    <result column="event_name" jdbcType="VARCHAR" property="eventName" />
+    <result column="show_name" jdbcType="VARCHAR" property="showName" />
+    <result column="venue_id" jdbcType="INTEGER" property="venueId" />
+    <result column="venue_name" jdbcType="VARCHAR" property="venueName" />
+    <result column="theatre_name" jdbcType="VARCHAR" property="theatreName" />
+    <result column="theatre_address" jdbcType="VARCHAR" property="theatreAddress" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+    <result column="program_notice" jdbcType="VARCHAR" property="programNotice" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, product_id, product_name, detail_poster_url, list_poster_url, event_id, 
+    event_name, show_name, venue_id, venue_name, theatre_name, theatre_address, remark, enterprise_id
+  </sql>
+</mapper>

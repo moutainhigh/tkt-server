@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtl.cypw.member.mapper.MemberMileageMapper">
+  <resultMap id="BaseResultMap" type="com.mtl.cypw.member.pojo.MemberMileage">
+    <id column="mileage_id" jdbcType="INTEGER" property="mileageId" />
+    <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="mileage_value" jdbcType="INTEGER" property="mileageValue" />
+    <result column="mileage_desc" jdbcType="VARCHAR" property="mileageDesc" />
+    <result column="add_date" jdbcType="TIMESTAMP" property="addDate" />
+    <result column="add_user" jdbcType="INTEGER" property="addUser" />
+    <result column="ip_address" jdbcType="VARCHAR" property="ipAddress" />
+    <result column="old_value" jdbcType="INTEGER" property="oldValue" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+  </resultMap>
+</mapper>
